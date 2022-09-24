@@ -53,16 +53,19 @@ describe('product listing page', () => {
     cy.visit('https://www.ratandboa.com/collections/all')
   })
   
-  // it('As a customer I want to add a product from the product listing page', () => {    
-  //   // Target third product on the listing page
-  //   cy.get(':nth-child(3) > .product > .product__info > .add-to-bag__button').click()
-  //   // Click the add to bag button
-  //   cy.get(':nth-child(1) > .variant-button').click()
-  //   // Check that the text 'added to bag' appears on the pop up. 
-  //   cy.contains('Added to bag', {matchCase: false})
-  // })
+  it('As a customer I want to add a product from the product listing page', () => {    
+    cy.wait(2000)
+    // Target third product on the listing page
+    cy.get(':nth-child(3) > .product > .product__info > .add-to-bag__button').click()
+    // Click the add to bag button
+    cy.get(':nth-child(1) > .variant-button').click()
+    // Check that the text 'added to bag' appears on the pop up. 
+    cy.contains('Added to bag', {matchCase: false})
+  })
 
   it('As a customer I want to select size and add a product to the cart from the product detail page', () => {
+    cy.wait(2000)
+
     // grab & click first product listed
     cy.contains('Farretti Dress Blue', {matchCase: false}).click()
     
@@ -92,7 +95,7 @@ describe('product listing page', () => {
     // select this product from the list
     cy.contains('Absinthe Dress', {matchCase: false}).click()
 
-    // cy.wait(1000)
+    cy.wait(1000)
 
     // Find the size help link & click
     cy.contains('Need help with your size?').click()
@@ -101,7 +104,7 @@ describe('product listing page', () => {
     cy.wait(1000)
 
     // confirm popup is visible
-    // cy.get("#easysize_popup").should('be.visible')
+    cy.get("#easysize_popup").should('be.visible')
 
   })
 
