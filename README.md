@@ -1,5 +1,8 @@
 # cypress-testing
 ## A Cypress testing task for job interview
+
+__Test file location:__ cypress/e2e/spec.cy.js
+
 __To run the tests: *npm run test* or *npx cypress open*__
 ### Notes on this task
 There are a few points about the task that I'd like to point out here:
